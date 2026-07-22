@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ANKER | Official Brand Store</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          display: ['Inter Tight', 'sans-serif'],
+        },
+        colors: {
+          navy: '#071426',
+          navylight: '#0E2038',
+          ankerblue: '#00AEEF',
+        },
+        boxShadow: {
+          glow: '0 0 40px rgba(0, 174, 239, 0.35)',
+          softcard: '0 8px 30px rgba(0,0,0,0.35)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root{
+    --navy: #071426;
+    --navy-light: #0E2038;
+    --anker: #00AEEF;
+  }
+
+  html, body{
+    background-color: var(--navy);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  body::-webkit-scrollbar{ display:none; }
+
+  body{
+    font-family: 'Inter', sans-serif;
+    background:
+      radial-gradient(circle at 50% -10%, rgba(0,174,239,0.22) 0%, rgba(0,174,239,0) 45%),
+      radial-gradient(circle at 85% 20%, rgba(0,174,239,0.10) 0%, rgba(0,174,239,0) 40%),
+      radial-gradient(circle at 100% 100%, rgba(0,174,239,0.08) 0%, rgba(0,174,239,0) 50%),
+      var(--navy);
+    min-height: 100vh;
+  }
+
+  .font-display{ font-family: 'Inter Tight', sans-serif; }
+
+  /* Glass card */
+  .glass{
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  /* Scroll reveal */
+  .reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1);
+  }
+  .reveal.in-view{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Ripple */
+  .ripple-surface{
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ripple{
+    position: absolute;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.35);
+    transform: scale(0);
+    animation: ripple-anim 650ms ease-out;
+    pointer-events: none;
+  }
+  @keyframes ripple-anim{
+    to{
+      transform: scale(2.6);
+      opacity: 0;
+    }
+  }
+
+  .card-hover{
+    transition: transform 0.35s cubic-bezier(.22,1,.36,1), border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  .card-hover:hover{
+    transform: translateY(-4px);
+    border-color: rgba(0,174,239,0.45);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.4);
+  }
+
+  .icon-hover{
+    transition: transform 0.35s cubic-bezier(.22,1,.36,1);
+  }
+  .card-hover:hover .icon-hover{
+    transform: scale(1.08);
+  }
+
+  .chevron-hover{
+    transition: transform 0.35s ease, color 0.35s ease;
+  }
+  .card-hover:hover .chevron-hover{
+    transform: translateX(4px);
+    color: var(--anker);
+  }
+
+  .cta-glow{
+    box-shadow: 0 10px 30px rgba(0,174,239,0.35), 0 0 0 1px rgba(0,174,239,0.25) inset;
+  }
+  .cta-glow:active{
+    transform: scale(0.98);
+  }
+
+  .logo-glow{
+    background: radial-gradient(circle, rgba(0,174,239,0.45) 0%, rgba(0,174,239,0) 70%);
+    filter: blur(20px);
+  }
+
+  .divider-fade{
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+    height: 1px;
+  }
+
+  .star-badge{
+    color: #FFC94A;
+  }
+
+  ::selection{
+    background: rgba(0,174,239,0.35);
+  }
+
+  .eyebrow{
+    letter-spacing: 0.22em;
+  }
+</style>
+</head>
+
+<body class="text-white antialiased">
+
+<div class="max-w-xl mx-auto min-h-screen relative px-5 sm:px-6 pb-14">
+
+  <!-- ============ HERO ============ -->
+  <section class="pt-14 sm:pt-16 flex flex-col items-center text-center reveal">
+    <div class="relative mb-7">
+      <div class="logo-glow absolute inset-0 scale-125"></div>
+      <img
+        src="data:image/png;base64,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"
+        alt="Anker Innovation Logo"
+        class="relative h-auto w-56 sm:w-64 rounded-[2rem]"
+      >
+    </div>
+
+    <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">ANKER</h1>
+    <p class="mt-1.5 text-ankerblue font-semibold text-sm sm:text-base eyebrow uppercase">Official Brand Store</p>
+
+    <div class="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs sm:text-sm text-gray-200">
+      <i class="fa-solid fa-location-dot text-ankerblue"></i>
+      <span>IOI City Mall</span>
+    </div>
+
+    <p class="mt-6 text-gray-300 text-sm sm:text-base leading-relaxed max-w-sm">
+      Discover genuine Anker, Soundcore &amp; eufy products with expert product consultation and reliable after-sales support.
+    </p>
+
+    <p class="mt-4 italic text-gray-400 text-sm">Powering Your Everyday.</p>
+
+    <a
+      href="https://share.google/k1uE2qd6tHdKv4yje"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="ripple-surface cta-glow mt-8 w-full flex items-center justify-center gap-2.5 bg-ankerblue hover:bg-[#0bbcff] transition-colors duration-300 text-navy font-bold text-sm sm:text-base py-4 rounded-2xl"
+    >
+      <i class="fa-solid fa-star star-badge"></i>
+      <span>Leave us a Google Review</span>
+    </a>
+  </section>
+
+  <!-- ============ QUICK ACTIONS ============ -->
+  <section class="mt-14 reveal">
+    <div class="flex items-center gap-3 mb-4 px-1">
+      <span class="text-ankerblue text-xs font-bold eyebrow uppercase">Quick Actions</span>
+      <div class="divider-fade flex-1"></div>
+    </div>
+
+    <div class="flex flex-col gap-3.5">
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/601155809861" target="_blank" rel="noopener noreferrer"
+         class="ripple-surface card-hover glass rounded-3xl p-4 flex items-center gap-4">
+        <div class="icon-hover shrink-0 w-12 h-12 rounded-full bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center">
+          <i class="fa-brands fa-whatsapp text-[#25D366] text-xl"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-semibold text-white text-sm sm:text-base">WhatsApp</h3>
+          <p class="text-gray-400 text-xs sm:text-sm mt-0.5 leading-snug">Chat directly with our Product Specialist</p>
+        </div>
+        <i class="chevron-hover fa-solid fa-chevron-right text-gray-500 text-sm shrink-0"></i>
+      </a>
+
+      <!-- Store Location -->
+      <a href="https://share.google/k1uE2qd6tHdKv4yje" target="_blank" rel="noopener noreferrer"
+         class="ripple-surface card-hover glass rounded-3xl p-4 flex items-center gap-4">
+        <div class="icon-hover shrink-0 w-12 h-12 rounded-full bg-[#FF4D4D]/15 border border-[#FF4D4D]/30 flex items-center justify-center">
+          <i class="fa-solid fa-location-dot text-[#FF4D4D] text-xl"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-semibold text-white text-sm sm:text-base">Store Location</h3>
+          <p class="text-gray-400 text-xs sm:text-sm mt-0.5 leading-snug">Lot No. L2-11, 2nd Floor, IOI City Mall, Lbh IRC, Ioi Resort, 62502 Putrajaya</p>
+        </div>
+        <i class="chevron-hover fa-solid fa-chevron-right text-gray-500 text-sm shrink-0"></i>
+      </a>
+
+      <!-- After Sales -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTtY5AqvTFVM5Qhqyrfw129fHV-qOlinBOcXdKL0YuzwXpuQ/viewform" target="_blank" rel="noopener noreferrer"
+         class="ripple-surface card-hover glass rounded-3xl p-4 flex items-center gap-4">
+        <div class="icon-hover shrink-0 w-12 h-12 rounded-full bg-ankerblue/15 border border-ankerblue/30 flex items-center justify-center">
+          <i class="fa-solid fa-screwdriver-wrench text-ankerblue text-xl"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-semibold text-white text-sm sm:text-base">After-Sales Service</h3>
+          <p class="text-gray-400 text-xs sm:text-sm mt-0.5 leading-snug">Submit warranty claims &amp; service requests</p>
+        </div>
+        <i class="chevron-hover fa-solid fa-chevron-right text-gray-500 text-sm shrink-0"></i>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============ CONNECT WITH US ============ -->
+  <section class="mt-11 reveal">
+    <div class="flex items-center gap-3 mb-4 px-1">
+      <span class="text-ankerblue text-xs font-bold eyebrow uppercase">Connect With Us</span>
+      <div class="divider-fade flex-1"></div>
+    </div>
+
+    <div class="flex flex-col gap-3.5">
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/ankerioicitymall?igsh=MWxlenFpMGx2azcyaA==" target="_blank" rel="noopener noreferrer"
+         class="ripple-surface card-hover glass rounded-3xl p-4 flex items-center gap-4">
+        <div class="icon-hover shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+             style="background: linear-gradient(135deg, rgba(245,133,41,0.2), rgba(221,42,123,0.2), rgba(129,52,175,0.2)); border:1px solid rgba(221,42,123,0.35);">
+          <i class="fa-brands fa-instagram text-lg" style="background: linear-gradient(135deg,#F58529,#DD2A7B,#8134AF); -webkit-background-clip:text; background-clip:text; color:transparent;"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-semibold text-white text-sm sm:text-base">Instagram</h3>
+          <p class="text-gray-400 text-xs sm:text-sm mt-0.5 leading-snug">Follow for latest updates &amp; reels</p>
+        </div>
+        <i class="chevron-hover fa-solid fa-chevron-right text-gray-500 text-sm shrink-0"></i>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/share/14gtajWtTSW/" target="_blank" rel="noopener noreferrer"
+         class="ripple-surface card-hover glass rounded-3xl p-4 flex items-center gap-4">
+        <div class="icon-hover shrink-0 w-12 h-12 rounded-full bg-[#1877F2]/15 border border-[#1877F2]/30 flex items-center justify-center">
+          <i class="fa-brands fa-facebook-f text-[#1877F2] text-xl"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-semibold text-white text-sm sm:text-base">Facebook</h3>
+          <p class="text-gray-400 text-xs sm:text-sm mt-0.5 leading-snug">Join our community &amp; events</p>
+        </div>
+        <i class="chevron-hover fa-solid fa-chevron-right text-gray-500 text-sm shrink-0"></i>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@ankerioi?_r=1&_t=ZS-98EjE24pve5" target="_blank" rel="noopener noreferrer"
+         class="ripple-surface card-hover glass rounded-3xl p-4 flex items-center gap-4">
+        <div class="icon-hover shrink-0 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+          <i class="fa-brands fa-tiktok text-white text-lg"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="font-semibold text-white text-sm sm:text-base">TikTok</h3>
+          <p class="text-gray-400 text-xs sm:text-sm mt-0.5 leading-snug">Watch our viral product reviews</p>
+        </div>
+        <i class="chevron-hover fa-solid fa-chevron-right text-gray-500 text-sm shrink-0"></i>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="mt-11 reveal">
+    <div class="flex items-center gap-3 mb-4 px-1">
+      <span class="text-ankerblue text-xs font-bold eyebrow uppercase">Why Choose Us</span>
+      <div class="divider-fade flex-1"></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3.5">
+
+      <div class="card-hover glass rounded-2xl p-4 flex items-center gap-3">
+        <i class="icon-hover fa-solid fa-certificate text-ankerblue text-lg shrink-0"></i>
+        <span class="text-white text-xs sm:text-sm font-medium leading-tight">Genuine Products</span>
+      </div>
+
+      <div class="card-hover glass rounded-2xl p-4 flex items-center gap-3">
+        <i class="icon-hover fa-solid fa-shop text-ankerblue text-lg shrink-0"></i>
+        <span class="text-white text-xs sm:text-sm font-medium leading-tight">Official Brand Store</span>
+      </div>
+
+      <div class="card-hover glass rounded-2xl p-4 flex items-center gap-3">
+        <i class="icon-hover fa-solid fa-shield-halved text-ankerblue text-lg shrink-0"></i>
+        <span class="text-white text-xs sm:text-sm font-medium leading-tight">Local Warranty</span>
+      </div>
+
+      <div class="card-hover glass rounded-2xl p-4 flex items-center gap-3">
+        <i class="icon-hover fa-solid fa-comments text-ankerblue text-lg shrink-0"></i>
+        <span class="text-white text-xs sm:text-sm font-medium leading-tight">Expert Consultation</span>
+      </div>
+
+      <div class="card-hover glass rounded-2xl p-4 flex items-center gap-3">
+        <i class="icon-hover fa-solid fa-headset text-ankerblue text-lg shrink-0"></i>
+        <span class="text-white text-xs sm:text-sm font-medium leading-tight">Reliable Support</span>
+      </div>
+
+      <div class="card-hover glass rounded-2xl p-4 flex items-center gap-3">
+        <i class="icon-hover fa-solid fa-bolt text-ankerblue text-lg shrink-0"></i>
+        <span class="text-white text-xs sm:text-sm font-medium leading-tight">Latest Ecosystem</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="mt-14 text-center reveal">
+    <div class="divider-fade w-full mb-6"></div>
+    <p class="text-gray-500 text-xs leading-relaxed">
+      © 2026 ANKER Official Brand Store<br>
+      Powered by Anker Innovation.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll reveal via IntersectionObserver
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // Ripple effect for all clickable surfaces
+  document.querySelectorAll('.ripple-surface').forEach(el => {
+    el.addEventListener('click', function (e) {
+      const rect = this.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(rect.width, rect.height);
+      const x = (e.clientX ?? rect.left + rect.width / 2) - rect.left - size / 2;
+      const y = (e.clientY ?? rect.top + rect.height / 2) - rect.top - size / 2;
+
+      ripple.className = 'ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+
+      this.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+</script>
+
+</body>
+</html>
